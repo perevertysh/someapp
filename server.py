@@ -33,7 +33,6 @@ def success():
 def fail():
     response.body = "fail"
     response.status = 500
-    raise Exception(str(dict(os.environ)))
     return response
 
 
