@@ -34,6 +34,7 @@ def success():
 def fail():
     response.body = "fail"
     response.status = 500
+    raise Exception(os.environ.get("PORT"))
     return response
 
 
