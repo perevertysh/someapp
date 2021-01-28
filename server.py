@@ -2,15 +2,16 @@ import os
 
 from bottle import Bottle, request, response, route, run
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 import sentry_sdk
 from sentry_sdk.integrations.bottle import BottleIntegration
 
-load_dotenv()
+# load_dotenv()
 
 sentry_sdk.init(
-    dsn=os.getenv("SENTRY_DSN"),
+    # dsn=os.getenv("SENTRY_DSN"),
+    dsn=os.environ.get("SENTRY_DSN"),
     integrations=[BottleIntegration()]
 )
 
